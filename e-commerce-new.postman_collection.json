@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "84d1b654-4897-4aaa-8b66-371d097b1e55",
+		"name": "e-commerce-new",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28637357"
+	},
+	"item": [
+		{
+			"name": "user-service",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Virat Kohlu\",\r\n  \"email\": \"virat@gmail.com\",\r\n  \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{80}}/users",
+							"host": [
+								"{{80}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{80}}/users/7f9603fc-eb3b-4cbb-a2cf-fd86de424789",
+							"host": [
+								"{{80}}"
+							],
+							"path": [
+								"users",
+								"7f9603fc-eb3b-4cbb-a2cf-fd86de424789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{80}}/users",
+							"host": [
+								"{{80}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product-service",
+			"item": [
+				{
+					"name": "add products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ // You can leave this empty or generate a UUID on the server side\r\n  \"name\": \"Pen2\",\r\n  \"description\": \"this is a pen\",\r\n  \"price\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{81}}/products",
+							"host": [
+								"{{81}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"name\": \"Pen\",\r\n  \"description\": \"this is a pen\",\r\n  \"price\": 12\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{81}}/products/e522823c-c3e1-4a62-b583-0c1f30a09010",
+							"host": [
+								"{{81}}"
+							],
+							"path": [
+								"products",
+								"e522823c-c3e1-4a62-b583-0c1f30a09010"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gey by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{81}}/products/F0062D02-3268-4D00-B534-1A585903FE2E",
+							"host": [
+								"{{81}}"
+							],
+							"path": [
+								"products",
+								"F0062D02-3268-4D00-B534-1A585903FE2E"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{81}}/products/a5d4fddc-6b7f-4dfe-bc9a-d56c9b89c695",
+							"host": [
+								"{{81}}"
+							],
+							"path": [
+								"products",
+								"a5d4fddc-6b7f-4dfe-bc9a-d56c9b89c695"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{81}}/products",
+							"host": [
+								"{{81}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "inventory-service",
+			"item": [
+				{
+					"name": "create inventory and product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productName\": \"Dell Laptop\",\r\n  \"description\": \"this is laptop\",\r\n  \"price\": 200,\r\n  \"availableQuantity\": 7\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{83}}/inventory",
+							"host": [
+								"{{83}}"
+							],
+							"path": [
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"availableQuantity\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{83}}/inventory/90eddda5-ea96-4b64-afc1-c0ce55dfcd37",
+							"host": [
+								"{{83}}"
+							],
+							"path": [
+								"inventory",
+								"90eddda5-ea96-4b64-afc1-c0ce55dfcd37"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{83}}/inventory/5e41128f-ff5e-4f27-b7d2-3005fa497e1f",
+							"host": [
+								"{{83}}"
+							],
+							"path": [
+								"inventory",
+								"5e41128f-ff5e-4f27-b7d2-3005fa497e1f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{83}}/inventory",
+							"host": [
+								"{{83}}"
+							],
+							"path": [
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{83}}/inventory/5e41128f-ff5e-4f27-b7d2-3005fa497e1f",
+							"host": [
+								"{{83}}"
+							],
+							"path": [
+								"inventory",
+								"5e41128f-ff5e-4f27-b7d2-3005fa497e1f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart-service",
+			"item": [
+				{
+					"name": "add-products-to-cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"F0062D02-3268-4D00-B534-1A585903FE2E\",\r\n    \"quantity\":\"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{84}}/cart/52aca55c-8256-471c-86bf-6d932da2b488/addItem",
+							"host": [
+								"{{84}}"
+							],
+							"path": [
+								"cart",
+								"52aca55c-8256-471c-86bf-6d932da2b488",
+								"addItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product quantity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"573fb6cf-8024-45df-80b1-c6fda5bd16cc\",\r\n    \"quantity\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{84}}/cart/52aca55c-8256-471c-86bf-6d932da2b488/updateItemQuantity",
+							"host": [
+								"{{84}}"
+							],
+							"path": [
+								"cart",
+								"52aca55c-8256-471c-86bf-6d932da2b488",
+								"updateItemQuantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cart items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{84}}/cart/52aca55c-8256-471c-86bf-6d932da2b488",
+							"host": [
+								"{{84}}"
+							],
+							"path": [
+								"cart",
+								"52aca55c-8256-471c-86bf-6d932da2b488"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove items",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{84}}/cart/52aca55c-8256-471c-86bf-6d932da2b488/removeItem/df1432da-795f-4084-98f8-20b954059fde",
+							"host": [
+								"{{84}}"
+							],
+							"path": [
+								"cart",
+								"52aca55c-8256-471c-86bf-6d932da2b488",
+								"removeItem",
+								"df1432da-795f-4084-98f8-20b954059fde"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wishlist-service",
+			"item": [
+				{
+					"name": "add item to wishlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{85}}/wishlist/df26090d-8feb-4887-92f4-e37919b660e5/addProduct/22b43ec0-8e4b-440e-bd6a-e56313f1d288",
+							"host": [
+								"{{85}}"
+							],
+							"path": [
+								"wishlist",
+								"df26090d-8feb-4887-92f4-e37919b660e5",
+								"addProduct",
+								"22b43ec0-8e4b-440e-bd6a-e56313f1d288"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove item from wishlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{85}}/wishlist/df26090d-8feb-4887-92f4-e37919b660e5/removeProduct/22b43ec0-8e4b-440e-bd6a-e56313f1d288",
+							"host": [
+								"{{85}}"
+							],
+							"path": [
+								"wishlist",
+								"df26090d-8feb-4887-92f4-e37919b660e5",
+								"removeProduct",
+								"22b43ec0-8e4b-440e-bd6a-e56313f1d288"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wishlists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{85}}/wishlist/df26090d-8feb-4887-92f4-e37919b660e5",
+							"host": [
+								"{{85}}"
+							],
+							"path": [
+								"wishlist",
+								"df26090d-8feb-4887-92f4-e37919b660e5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wishlisted product details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{85}}/wishlist/df26090d-8feb-4887-92f4-e37919b660e5/products",
+							"host": [
+								"{{85}}"
+							],
+							"path": [
+								"wishlist",
+								"df26090d-8feb-4887-92f4-e37919b660e5",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order-service",
+			"item": [
+				{
+					"name": "create-order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"52aca55c-8256-471c-86bf-6d932da2b488\",  // Replace with a valid UUID for the user\r\n  \"orderItems\": [\r\n    {\r\n      \"productId\": \"f0062d02-3268-4d00-b534-1a585903fe2e\",  // Replace with a valid UUID for the product\r\n      \"quantity\": 2,\r\n      \"amount\": 40\r\n    },\r\n    {\r\n      \"productId\": \"323322ae-2345-43a4-bc69-8f6d0b955fc1\",  // Replace with another valid UUID for another product\r\n      \"quantity\": 3,\r\n      \"amount\": 60\r\n    }\r\n  ],\r\n  \"totalAmount\": 100\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{86}}/order",
+							"host": [
+								"{{86}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{86}}/order/user/52aca55c-8256-471c-86bf-6d932da2b488",
+							"host": [
+								"{{86}}"
+							],
+							"path": [
+								"order",
+								"user",
+								"52aca55c-8256-471c-86bf-6d932da2b488"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{86}}/order/04a24194-34fd-4f7c-868a-822b1d0be8db",
+							"host": [
+								"{{86}}"
+							],
+							"path": [
+								"order",
+								"04a24194-34fd-4f7c-868a-822b1d0be8db"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification-service",
+			"item": [
+				{
+					"name": "create notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"52aca55c-8256-471c-86bf-6d932da2b488\",\r\n    \"message\":\"your order has been placed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{87}}/notification",
+							"host": [
+								"{{87}}"
+							],
+							"path": [
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{87}}/notification/user/52aca55c-8256-471c-86bf-6d932da2b488",
+							"host": [
+								"{{87}}"
+							],
+							"path": [
+								"notification",
+								"user",
+								"52aca55c-8256-471c-86bf-6d932da2b488"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
