@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-config
+data:
+  USER_SERVICE_BASE_URL: http://user-service:8080
+  INVENTORY_SERVICE_BASE_URL: http://inventory-service:8080
+  PRODUCT_SERVICE_BASE_URL: http://product-service:8080
+  CART_SERVICE_BASE_URL: http://cart-service:8080
+  WIAHLIST_SERVICE_BASE_URL: http://wishlist-service:8080
+  ORDER_SERVICE_BASE_URL: http://order-service:8080
+  NOTIFICATION_SERVICE_BASE_URL: http://notification-service:8080
+  mongoUrl : mongodb://mongodb-service:27017/billing
