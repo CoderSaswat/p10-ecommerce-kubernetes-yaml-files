@@ -4,6 +4,6 @@ Functionality - It's a simple e-commerce project having multiple java microservi
 
 Technology Stack - Spring Boot(Microservices), MongoDB, Docker (Hub, Volume, Dockerfile), Kubernetes (Minikube cluster)
 
-Product Service :
-  source code : https://github.com/CoderSaswat/p10-ecommerce-product-service
-  docker image : docker pull saswatcloud/p10-ecommerce-product-service:2
+## Product Service :
+  * source code : https://github.com/CoderSaswat/p10-ecommerce-product-service
+  * docker image : docker pull saswatcloud/p10-ecommerce-product-service:2
