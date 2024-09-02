@@ -1,0 +1,51 @@
+- apply config-map
+- apply mongo-service, mongo-deployment
+- apply all deployments : kubectl get pods
+- apply all services : kubectl get svc
+- enable dashboard : minikube addons enable dashboard
+		     minikube dashboard	
+- port forward a service to local : kubectl port-forward service/product-service 8080:8080
+- apply all yaml files : kubectl apply -f .
+- to destroy all : kubectl delete -f .
+- to apply one yaml file : kubectl apply -f my-deployment.yaml
+- call apis and test the app
+	- do a post call in inventory-service[path:/inventory] to create inventory and product together
+	- inventory-service creates inventory(productName & availableQuantity) and does a inter-service call to
+	  product service to create product(productName, description, price)
+	- e.g.
+	      {
+        	"productName": "Dell Laptop",
+ 		"description": "this is the best laptop",
+  		"price": 200,
+  		"availableQuantity": 7
+	      }
+	- do a get call in product service[path:/products]
+	- product-service does a interservice call to inventory-service to fetch available-quantity of products
+	- create user in user-service[/users]
+	- e.g.
+	     {
+ 	      "name": "saswat",
+	      "email": "saswat@gmail.com",
+ 	      "password": "password"
+	     }		
+	- create order in order-service [path:/order]
+	- e.g.
+	     {
+  		"userId": "8399ee63-161b-4fbe-822e-43f471d86667",
+ 		 "orderItems": [
+  			  {
+    			    "productId": "56e3d0ad-3ca7-4058-a626-5c7df85f068c",
+    			    "quantity": 2,
+     			    "amount": 400
+   			  }
+  		],
+  		"totalAmount": 450
+	     }
+	- do a get call to order-service with userId[path:/order/user/{userId}] to see all order of the user
+	- do a get call to notificaltion-service with userId[path:/notification/user/{userId} to check all notifications of the user
+	- do a get call to product-service [/products] to check the availability-quanity of products decreased after order placed
+
+NOTE: 
+     - docker images are pushed to docker hub (pushed after build /after jar created with latest code)
+			 
+

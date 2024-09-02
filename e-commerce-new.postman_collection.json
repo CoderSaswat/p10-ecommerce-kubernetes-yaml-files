@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Virat Kohlu\",\r\n  \"email\": \"virat@gmail.com\",\r\n  \"password\": \"password\"\r\n}",
+							"raw": "{\r\n  \"name\": \"saswat\",\r\n  \"email\": \"saswat@gmail.com\",\r\n  \"password\": \"password\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,10 +24,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{80}}/users",
+							"raw": "http://localhost:8082/users",
+							"protocol": "http",
 							"host": [
-								"{{80}}"
+								"localhost"
 							],
+							"port": "8082",
 							"path": [
 								"users"
 							]
@@ -82,7 +84,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ // You can leave this empty or generate a UUID on the server side\r\n  \"name\": \"Pen2\",\r\n  \"description\": \"this is a pen\",\r\n  \"price\": 10\r\n}\r\n",
+							"raw": "{\r\n    \"name\": \"Dell Laptop\",\r\n    \"description\":\"test\",\r\n    \"price\":100,\r\n    \"availableQuantity\" : 10,\r\n    \"inventoryId\":\"553a3d94-465f-43df-b39c-1d4e30c60cf3\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -90,10 +92,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{81}}/products",
+							"raw": "http://localhost:8084/products",
+							"protocol": "http",
 							"host": [
-								"{{81}}"
+								"localhost"
 							],
+							"port": "8084",
 							"path": [
 								"products"
 							]
@@ -170,10 +174,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{81}}/products",
+							"raw": "http://localhost:8081/products",
+							"protocol": "http",
 							"host": [
-								"{{81}}"
+								"localhost"
 							],
+							"port": "8081",
 							"path": [
 								"products"
 							]
@@ -193,7 +199,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"productName\": \"Dell Laptop\",\r\n  \"description\": \"this is laptop\",\r\n  \"price\": 200,\r\n  \"availableQuantity\": 7\r\n}\r\n",
+							"raw": "{\r\n  \"productName\": \"Dell Laptop\",\r\n  \"description\": \"this is the best laptop\",\r\n  \"price\": 200,\r\n  \"availableQuantity\": 100\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -201,10 +207,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{83}}/inventory",
+							"raw": "http://localhost:8080/inventory",
+							"protocol": "http",
 							"host": [
-								"{{83}}"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"inventory"
 							]
@@ -287,6 +295,58 @@
 							"path": [
 								"inventory",
 								"5e41128f-ff5e-4f27-b7d2-3005fa497e1f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification-service",
+			"item": [
+				{
+					"name": "create notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"52aca55c-8256-471c-86bf-6d932da2b488\",\r\n    \"message\":\"your order has been placed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{87}}/notification",
+							"host": [
+								"{{87}}"
+							],
+							"path": [
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/notification/user/179cae9e-8f5e-4050-9ba9-00f96f813b26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"notification",
+								"user",
+								"179cae9e-8f5e-4050-9ba9-00f96f813b26"
 							]
 						}
 					},
@@ -485,7 +545,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"userId\": \"52aca55c-8256-471c-86bf-6d932da2b488\",  // Replace with a valid UUID for the user\r\n  \"orderItems\": [\r\n    {\r\n      \"productId\": \"f0062d02-3268-4d00-b534-1a585903fe2e\",  // Replace with a valid UUID for the product\r\n      \"quantity\": 2,\r\n      \"amount\": 40\r\n    },\r\n    {\r\n      \"productId\": \"323322ae-2345-43a4-bc69-8f6d0b955fc1\",  // Replace with another valid UUID for another product\r\n      \"quantity\": 3,\r\n      \"amount\": 60\r\n    }\r\n  ],\r\n  \"totalAmount\": 100\r\n}\r\n",
+							"raw": "{\r\n  \"userId\": \"a323c220-b85a-4958-8678-e9ad6e258611\",\r\n  \"orderItems\": [\r\n    {\r\n      \"productId\": \"179cae9e-8f5e-4050-9ba9-00f96f813b26\",\r\n      \"quantity\": 2,\r\n      \"amount\": 400\r\n    }\r\n  ],\r\n  \"totalAmount\": 440\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -493,10 +553,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{86}}/order",
+							"raw": "http://localhost:8084/order",
+							"protocol": "http",
 							"host": [
-								"{{86}}"
+								"localhost"
 							],
+							"port": "8084",
 							"path": [
 								"order"
 							]
@@ -510,14 +572,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{86}}/order/user/52aca55c-8256-471c-86bf-6d932da2b488",
+							"raw": "http://localhost:8083/order/user/8399ee63-161b-4fbe-822e-43f471d86667",
+							"protocol": "http",
 							"host": [
-								"{{86}}"
+								"localhost"
 							],
+							"port": "8083",
 							"path": [
 								"order",
 								"user",
-								"52aca55c-8256-471c-86bf-6d932da2b488"
+								"8399ee63-161b-4fbe-822e-43f471d86667"
 							]
 						}
 					},
@@ -536,56 +600,6 @@
 							"path": [
 								"order",
 								"04a24194-34fd-4f7c-868a-822b1d0be8db"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "notification-service",
-			"item": [
-				{
-					"name": "create notification",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"52aca55c-8256-471c-86bf-6d932da2b488\",\r\n    \"message\":\"your order has been placed\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{87}}/notification",
-							"host": [
-								"{{87}}"
-							],
-							"path": [
-								"notification"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get all notifications",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{87}}/notification/user/52aca55c-8256-471c-86bf-6d932da2b488",
-							"host": [
-								"{{87}}"
-							],
-							"path": [
-								"notification",
-								"user",
-								"52aca55c-8256-471c-86bf-6d932da2b488"
 							]
 						}
 					},

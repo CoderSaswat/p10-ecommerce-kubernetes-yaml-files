@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: order-service
-          image: saswatcloud/p10-ecommerce-order-service:1
+          image: saswatcloud/p10-ecommerce-order-service:6
           ports:
             - containerPort: 8080
           env:
@@ -30,16 +30,9 @@ spec:
               configMapKeyRef:
                 name: service-config
                 key: NOTIFICATION_SERVICE_BASE_URL
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: order-service
-spec:
-  selector:
-    app: order-service
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
-  type: ClusterIP
+          - name: INVENTORY_SERVICE_BASE_URL
+            valueFrom:
+                configMapKeyRef:
+                  name: service-config
+                  key: INVENTORY_SERVICE_BASE_URL
+
