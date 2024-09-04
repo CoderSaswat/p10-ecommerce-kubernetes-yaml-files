@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: saswatcloud/p10-ecommerce-user-service:1
+          image: saswatcloud/p10-ecommerce-user-service:3
           ports:
             - containerPort: 8080
           env:

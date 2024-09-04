@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: notification-service
-          image: saswatcloud/p10-ecommerce-notification-service:2
+          image: saswatcloud/p10-ecommerce-notification-service:4
           ports:
             - containerPort: 8080
           env:

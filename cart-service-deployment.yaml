@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cart-service
-          image: saswatcloud/p10-ecommerce-cart-service:1
+          image: saswatcloud/p10-ecommerce-cart-service:3
           ports:
             - containerPort: 8080
           env:
